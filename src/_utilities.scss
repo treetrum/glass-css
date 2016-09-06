@@ -1,0 +1,11 @@
+// Functions
+@function rem-calc($valueInPixels) {
+    @return $valueInPixels/$rem-base + rem;
+}
+
+// Mixins
+@mixin breakpoint($breakpointMinWidth) {
+    @media screen and (min-width: #{$breakpointMinWidth}) {
+        @content
+    }
+}

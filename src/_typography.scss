@@ -1,0 +1,41 @@
+// Set base REM/EM unit to 16px
+html {
+    font-size: $rem-base;
+    font-family: $font-family;
+}
+
+// Mobile font sizes
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.50rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.00rem; }
+h6 { font-size: 0.875rem; }
+p, li, span { font-size: 0.875rem; line-height: $line-height}
+
+// Desktop font sizes
+@include breakpoint($small) {
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 2.0rem; }
+    h4 { font-size: 1.75rem; }
+    h5 { font-size: 1.5rem; }
+    h6 { font-size: 1.25rem; }
+    p, li, span { font-size: 1.00rem; }
+}
+
+// Remove any default margins on typographic elements
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+}
+p, ul, ol {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+// Add top margin to headings (h1-h4) following paragraphs or lists
+p + h1, p + h2, p + h3, p + h4,
+ol + h1, ol + h2, ol + h3, ol + h4,
+ul + h1, ul + h2, ul + h3, ul + h4 {
+    margin-top: 3rem;
+}

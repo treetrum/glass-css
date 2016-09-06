@@ -1,1 +1,13 @@
 @import "reset";
+@import "utilities";
+@import "variables";
+@import "typography";
+@import "grid";
+
+body {
+    background-color: hsl(0, 0, 95);
+    margin: 1rem 0;
+}
+.wrap {
+    background-color: white;
+}
