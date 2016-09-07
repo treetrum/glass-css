@@ -8,15 +8,17 @@ html {
 
 // Center everything inside the body
 body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
 }
 
 // Setup .wrap
 .wrap {
+    margin: 0 auto;
     width: 100%;
     max-width: $wrap-max-width;
+    overflow: hidden;
     &.expanded {
         max-width: 100%;
     }
@@ -24,6 +26,7 @@ body {
 
 // Setup .content
 .content {
+    display: block;
     padding-left: $content-gutter/2;
     padding-right: $content-gutter/2;
 }
