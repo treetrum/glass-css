@@ -35,10 +35,10 @@ gulp.task('default', ['clean'], function() {
     gulp.start('styles');
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['clean'], function() {
 
     // Build files before we start watching
-    gulp.start('default');
+    gulp.start('styles');
 
     // Watch .scss files
     gulp.watch('src/*.scss', ['styles']);
