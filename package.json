@@ -5,18 +5,24 @@
   "main": "dist/style.css",
   "scripts": {
     "test": "true-cli tests/tests.scss && echo 'All tests passed.'",
+    "clean": "rm -f dist/*",
+    "prescss": "mkdir -p dist && npm run clean",
+    "scss": "node-sass --output-style compressed src/style.scss > dist/style-min.css && node-sass --output-style expanded src/style.scss > dist/style.css",
+    "autoprefixer": "postcss -u autoprefixer -r dist/*.css",
+    "serve": "browser-sync start --server --files 'dist/*.css, *.html'",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "build": "npm run build:css",
+    "watch:css": "onchange 'src/*.scss' -- npm run build:css",
+    "watch": "parallelshell 'npm run serve' 'npm run watch:css'"
   },
   "author": "Sam Davis <sam@sjd.co>",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.4.1",
     "browser-sync": "^2.15.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-notify": "^2.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "node-sass": "^3.9.3",
+    "postcss-cli": "^2.6.0",
+    "rename": "^1.0.3",
+    "sass-true": "^2.1.3"
   }
 }

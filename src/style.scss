@@ -1,21 +1,14 @@
+/*!
+ * SJD - CSS Framework
+ */
+
 @import "reset";
 @import "utilities";
 @import "variables";
 @import "typography";
 @import "grid";
 
-body {
-    // background-color: hsl(0, 0, 95);
-
-    @include breakpoint($small) {
-        // margin: 1rem;
-    }
-}
-.wrap {
-    // background-color: white;
-}
-
-.arbitrary-wrap-container {
+.header-container {
     background-color: hsl(0, 0, 95);
     border-bottom: 1px solid hsl(0, 0, 90);
     padding: 2rem 0;
@@ -23,8 +16,7 @@ body {
         padding: 3rem 0;
     }
 }
-.arbitrary-wrap-container-2 {
-    // background-color: green;
+.content-container-2 {
     padding: 1rem 0;
     @include breakpoint($small) {
         padding: 2rem 0;
