@@ -1,6 +1,7 @@
 // Functions
 @function rem-calc($valueInPixels) {
-    @return $valueInPixels/$rem-base + rem;
+    $remSize: $valueInPixels/$rem-base;
+    @return $remSize + rem;
 }
 
 // Mixins

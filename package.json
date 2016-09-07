@@ -4,7 +4,7 @@
   "description": "Simple, lightweight CSS framework to use in future projects.",
   "main": "dist/style.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "true-cli tests/tests.scss && echo 'All tests passed.'",
   },
   "author": "Sam Davis <sam@sjd.co>",
   "license": "ISC",
