@@ -10,10 +10,10 @@
     "scss": "node-sass --output-style compressed src/style.scss > dist/style-min.css && node-sass --output-style expanded src/style.scss > dist/style.css",
     "autoprefixer": "postcss -u autoprefixer -r dist/*.css",
     "serve": "browser-sync start --server --files 'dist/*.css, *.html'",
-    "build:css": "npm run scss && npm run autoprefixer",
+    "build:css": "npm test && npm run scss && npm run autoprefixer",
     "build": "npm run build:css",
-    "watch:css": "onchange 'src/*.scss' -- npm run build:css",
-    "watch": "parallelshell 'npm run serve' 'npm run watch:css'"
+    "watch:css": "onchange '**/*.scss' -- npm run build:css",
+    "watch": "npm run build && parallelshell 'npm run serve' 'npm run watch:css'"
   },
   "author": "Sam Davis <sam@sjd.co>",
   "license": "ISC",
