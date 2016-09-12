@@ -247,7 +247,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.50rem;
+  font-size: 1.5rem;
 }
 
 h4 {
@@ -255,7 +255,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.00rem;
+  font-size: 1rem;
 }
 
 h6 {
@@ -275,7 +275,7 @@ p, li, span {
     font-size: 2.25rem;
   }
   h3 {
-    font-size: 2.0rem;
+    font-size: 2rem;
   }
   h4 {
     font-size: 1.75rem;
@@ -287,7 +287,7 @@ p, li, span {
     font-size: 1.25rem;
   }
   p, li, span {
-    font-size: 1.00rem;
+    font-size: 1rem;
   }
 }
 
