@@ -4,7 +4,7 @@
   "description": "Simple, lightweight CSS framework to use in future projects.",
   "main": "dist/style.css",
   "scripts": {
-    "test": "true-cli tests/tests.scss && echo 'All tests passed.'",
+    "test": "true-cli tests/tests.scss && notify -m 'All tests passed.' || notify -m 'Test/s failed.' -s Basso --icon https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-128.png",
     "clean": "rm -f dist/*",
     "prescss": "mkdir -p dist && npm run clean",
     "scss": "node-sass --output-style compressed src/style.scss > dist/style-min.css && node-sass --output-style expanded src/style.scss > dist/style.css",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "browser-sync": "^2.15.0",
+    "node-notifier": "^4.6.1",
     "node-sass": "^3.9.3",
     "onchange": "^3.0.0",
     "parallelshell": "^2.0.0",
