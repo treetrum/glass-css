@@ -316,6 +316,17 @@ html {
   width: 100%;
   max-width: 75rem;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .wrap.expanded {
@@ -324,8 +335,134 @@ html {
 
 .content {
   display: block;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.small-1 {
+  width: 8.33333%;
+}
+
+.small-2 {
+  width: 16.66667%;
+}
+
+.small-3 {
+  width: 25%;
+}
+
+.small-4 {
+  width: 33.33333%;
+}
+
+.small-5 {
+  width: 41.66667%;
+}
+
+.small-6 {
+  width: 50%;
+}
+
+.small-7 {
+  width: 58.33333%;
+}
+
+.small-8 {
+  width: 66.66667%;
+}
+
+.small-9 {
+  width: 75%;
+}
+
+.small-10 {
+  width: 83.33333%;
+}
+
+.small-11 {
+  width: 91.66667%;
+}
+
+.small-12 {
+  width: 100%;
+}
+
+@media screen and (min-width: 40.0625rem) {
+  .medium-1 {
+    width: 8.33333%;
+  }
+  .medium-2 {
+    width: 16.66667%;
+  }
+  .medium-3 {
+    width: 25%;
+  }
+  .medium-4 {
+    width: 33.33333%;
+  }
+  .medium-5 {
+    width: 41.66667%;
+  }
+  .medium-6 {
+    width: 50%;
+  }
+  .medium-7 {
+    width: 58.33333%;
+  }
+  .medium-8 {
+    width: 66.66667%;
+  }
+  .medium-9 {
+    width: 75%;
+  }
+  .medium-10 {
+    width: 83.33333%;
+  }
+  .medium-11 {
+    width: 91.66667%;
+  }
+  .medium-12 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 64.0625rem) {
+  .large-1 {
+    width: 8.33333%;
+  }
+  .large-2 {
+    width: 16.66667%;
+  }
+  .large-3 {
+    width: 25%;
+  }
+  .large-4 {
+    width: 33.33333%;
+  }
+  .large-5 {
+    width: 41.66667%;
+  }
+  .large-6 {
+    width: 50%;
+  }
+  .large-7 {
+    width: 58.33333%;
+  }
+  .large-8 {
+    width: 66.66667%;
+  }
+  .large-9 {
+    width: 75%;
+  }
+  .large-10 {
+    width: 83.33333%;
+  }
+  .large-11 {
+    width: 91.66667%;
+  }
+  .large-12 {
+    width: 100%;
+  }
 }
 
 .header-container {

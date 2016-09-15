@@ -10,10 +10,22 @@ html {
 
 // Setup .wrap
 .wrap {
+
+    // General setup
     margin: 0 auto;
     width: 100%;
     max-width: $wrap-max-width;
     overflow: hidden;
+
+    // Set flex display properties
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // Set gutter
+    padding-left: $content-gutter/4;
+    padding-right: $content-gutter/4;
+
     &.expanded {
         max-width: 100%;
     }
@@ -22,6 +34,26 @@ html {
 // Setup .content
 .content {
     display: block;
-    padding-left: $content-gutter/2;
-    padding-right: $content-gutter/2;
+    padding-left: $content-gutter/4;
+    padding-right: $content-gutter/4;
+}
+
+@for $i from 1 through $column-count {
+    .small-#{$i} {
+        width: (100% / $column-count) * $i;
+    }
+}
+@include breakpoint($small) {
+    @for $i from 1 through $column-count {
+        .medium-#{$i} {
+            width: (100% / $column-count) * $i;
+        }
+    }
+}
+@include breakpoint($medium) {
+    @for $i from 1 through $column-count {
+        .large-#{$i} {
+            width: (100% / $column-count) * $i;
+        }
+    }
 }
