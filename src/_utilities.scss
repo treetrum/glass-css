@@ -40,3 +40,19 @@
     }
 
 }
+
+/**
+ * Sets the heading font size base to the supplied argument
+ * and 130% of that size on after the 'medium' breakpoint
+ */
+@mixin baseHeadingFontSize($baseFontSize) {
+
+    // Set base font size
+    font-size: $baseFontSize;
+
+    // Set font size for 'medium' and up
+    @include breakpoint(medium) {
+        font-size: $baseFontSize * 1.3;
+    }
+    
+}

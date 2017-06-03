@@ -4,40 +4,51 @@
 html {
     font-size: $rem-base;
     font-family: $font-family;
+    line-height: $line-height-body;
 }
 
-// Mobile font sizes
-h1 { font-size: 2.25rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.875rem; }
-p, li, span { font-size: 0.875rem; line-height: $line-height}
-
-// Desktop font sizes
-@include breakpoint(small) {
-    h1 { font-size: 2.75rem; }
-    h2 { font-size: 2.25rem; }
-    h3 { font-size: 2rem; }
-    h4 { font-size: 1.75rem; }
-    h5 { font-size: 1.5rem; }
-    h6 { font-size: 1.25rem; }
-    p, li, span { font-size: 1rem; }
+// Headings
+@each $heading in $headings {
+    #{$heading} {
+        margin: 0;
+        line-height: $line-height-headings;
+    }
 }
 
-// Remove any default margins on typographic elements
-h1, h2, h3, h4, h5, h6 {
-    margin: 1rem 0;
+h1 { @include baseHeadingFontSize(2.5rem) }
+h2 { @include baseHeadingFontSize(2.1rem) }
+h3 { @include baseHeadingFontSize(1.9rem) }
+h4 { @include baseHeadingFontSize(1.6rem) }
+h5 { @include baseHeadingFontSize(1.3rem) }
+h6 { @include baseHeadingFontSize(1rem) }
+
+// Body copy
+p, li {
+    font-size: 1rem;
 }
 p, ul, ol {
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: $vertical-rhythm;
 }
 
-// Add top margin to headings (h1-h4) following paragraphs or lists
-p + h1, p + h2, p + h3, p + h4,
-ol + h1, ol + h2, ol + h3, ol + h4,
-ul + h1, ul + h2, ul + h3, ul + h4 {
-    margin-top: 3rem;
+// Give headings after headings after headings some top margin
+// Uses % elements to minimize outputted code
+%headings-after-headings { margin-top: $vertical-rhythm/2; }
+@each $heading in $headings {
+	@each $headingNested in $headings {
+		#{$heading} + #{$headingNested} {
+			@extend %headings-after-headings;
+		}
+	}
+}
+
+// Give paragraph style elements following headings half their usual margin top
+// Uses % elements to minimize outputted code
+%paragraphs-after-headings { margin-top: $vertical-rhythm/2; }
+@each $pElement in (p, ul) {
+    @each $heading in $headings {
+        #{$heading} + #{$pElement} {
+            @extend %paragraphs-after-headings;
+        }
+    }
 }
