@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/treetrum/glass-css.svg?branch=master)](https://travis-ci.org/treetrum/glass-css)
+
 # Glass CSS
 
 *A lightweight, mostly clear CSS/Sass framework*
