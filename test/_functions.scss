@@ -1,0 +1,8 @@
+@include describe('Functions') {
+    // rem-calc function
+    @include describe("rem-calc") {
+        @include it("Converts px into rem units") {
+            @include assert-equal( rem-calc(16px, 16px), "1rem" );
+        }
+    }
+}

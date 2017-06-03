@@ -1,7 +1,7 @@
 // Functions
 // ---------
-@function rem-calc($valueInPixels) {
-    $remSize: $valueInPixels/$rem-base;
+@function rem-calc($valueInPixels, $_rem-base: $rem-base) {
+    $remSize: $valueInPixels/$_rem-base;
     @return $remSize + rem;
 }
 
@@ -12,14 +12,14 @@
 // single argument.
 //
 // TODO: Add suport for using explicit numeric (px, rem, em, etc) values
-@mixin breakpoint($namedBreakpoint) {
+@mixin breakpoint($namedBreakpoint, $_breakpoints: $breakpoints) {
 
     // Create a variable to store the retrived breakpoint
     $breakpoint: 0px;
 
     // If $breakpoitns has the key supplied, use the value attached to it.
-    @if map-has-key($breakpoints, $namedBreakpoint) {
-        $breakpoint: map-get($breakpoints, $namedBreakpoint);
+    @if map-has-key($_breakpoints, $namedBreakpoint) {
+        $breakpoint: map-get($_breakpoints, $namedBreakpoint);
     }
 
     // If we dont find the key in $breakpoints, create an error.
@@ -43,14 +43,14 @@
 
 // Sets the heading font size base to the supplied argument
 // and 130% of that size on after the 'medium' breakpoint
-@mixin baseHeadingFontSize($baseFontSize) {
+@mixin baseHeadingFontSize($baseFontSize, $scale: 1.3, $_breakpoints: $breakpoints) {
 
     // Set base font size
     font-size: $baseFontSize;
 
     // Set font size for 'medium' and up
-    @include breakpoint(medium) {
-        font-size: $baseFontSize * 1.3;
+    @include breakpoint(medium, $_breakpoints) {
+        font-size: $baseFontSize * $scale;
     }
 
 }

@@ -4,6 +4,8 @@
     "description": "Glass CSS. A simple, lightweight, mostly clear CSS framework.",
     "main": "src/style.scss",
     "scripts": {
+        "test": "mocha test/test-sass.js",
+        "prebuild": "npm run test",
         "build": "npm run build:min && npm run build:max",
         "build:min": "node-sass --output-style compressed src/glass.scss > dist/glass-min.css",
         "build:max": "node-sass --output-style nested src/glass.scss > dist/glass.css"
@@ -29,6 +31,8 @@
     },
     "homepage": "https://github.com/treetrum/glass-scss#readme",
     "devDependencies": {
-        "node-sass": "^4.5.3"
+        "node-sass": "^4.5.3",
+        "mocha": "^3.4.2",
+        "sass-true": "^3.0.0-beta.1"
     }
 }

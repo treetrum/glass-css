@@ -1,0 +1,69 @@
+@include describe("Mixins") {
+
+    $bps: ( small: 0px, medium: 700px, large: 1200px );
+
+    // breakpoint mixin
+    @include describe('breakpoint') {
+
+        @include it('Omit media query if breakpoint == small') {
+            @include assert {
+                @include output {
+                    @include breakpoint(small, $bps) { font-size: 0.5rem; }
+                }
+                @include expect {
+                    font-size: 0.5rem;
+                }
+            }
+        }
+
+        @include it('Should generate appropriate media query when >= medium') {
+
+            @include assert {
+                @include output {
+                    @include breakpoint(medium, $bps) { font-size: 1rem; }
+                    @include breakpoint(large, $bps) { font-size: 1.5rem; }
+                }
+                @include expect {
+                    @media screen and (min-width: map-get($bps, 'medium')) { font-size: 1rem; }
+                    @media screen and (min-width: map-get($bps, 'large')) { font-size: 1.5rem; }
+                }
+            }
+
+        }
+    }
+
+    // baseHeadingFontSize mixin
+    @include describe('baseHeadingFontSize') {
+
+        $bps: ( small: 0px, medium: 700px, large: 1200px );
+
+        @include it('Should default to 1.3x scale') {
+            @include assert {
+                @include output {
+                    @include baseHeadingFontSize(1rem, $_breakpoints: $bps);
+                }
+                @include expect {
+                    font-size: 1rem;
+                    @media screen and (min-width: map-get($bps, 'medium')) {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+
+        @include it('Allows for custom scale') {
+            @include assert {
+                @include output {
+                    @include baseHeadingFontSize(1rem, 1.5, $bps);
+                }
+                @include expect {
+                    font-size: 1rem;
+                    @media screen and (min-width: map-get($bps, 'medium')) {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+}
