@@ -1,5 +1,5 @@
 {
-  "name": "glass-css-framework",
+  "name": "glass-css",
   "version": "0.0.1",
   "description": "Glass CSS. A simple, lightweight, mostly clear CSS framework.",
   "main": "src/style.scss",
