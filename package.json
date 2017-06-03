@@ -1,8 +1,8 @@
 {
-  "name": "sjd-css-framework",
-  "version": "0.0.0",
-  "description": "Simple, lightweight CSS framework to use in future projects.",
-  "main": "dist/style.css",
+  "name": "glass-css-framework",
+  "version": "0.0.1",
+  "description": "Glass CSS. A simple, lightweight, mostly clear CSS framework.",
+  "main": "src/style.scss",
   "scripts": {
     "test": "true-cli tests/tests.scss && notify -m 'All tests passed.' || notify -m 'Test/s failed.' -s Basso --icon https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-128.png",
     "clean": "rm -f dist/*",
@@ -16,7 +16,7 @@
     "watch": "npm run build && parallelshell 'npm run serve' 'npm run watch:css'"
   },
   "author": "Sam Davis <sam@sjd.co>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "browser-sync": "^2.15.0",
