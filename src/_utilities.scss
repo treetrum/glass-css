@@ -1,17 +1,17 @@
 // Functions
+// ---------
 @function rem-calc($valueInPixels) {
     $remSize: $valueInPixels/$rem-base;
     @return $remSize + rem;
 }
 
-/** Mixins */
+// Mixins
+// ------
 
-/**
- * Simplifies using breakpoints by providing an entry from $breakpoints as the
- * single argument.
- *
- * // TODO: Add suport for using explicit numeric (px, rem, em, etc) values
- */
+// Simplifies using breakpoints by providing an entry from $breakpoints as the
+// single argument.
+//
+// TODO: Add suport for using explicit numeric (px, rem, em, etc) values
 @mixin breakpoint($namedBreakpoint) {
 
     // Create a variable to store the retrived breakpoint
@@ -41,10 +41,8 @@
 
 }
 
-/**
- * Sets the heading font size base to the supplied argument
- * and 130% of that size on after the 'medium' breakpoint
- */
+// Sets the heading font size base to the supplied argument
+// and 130% of that size on after the 'medium' breakpoint
 @mixin baseHeadingFontSize($baseFontSize) {
 
     // Set base font size
@@ -54,5 +52,5 @@
     @include breakpoint(medium) {
         font-size: $baseFontSize * 1.3;
     }
-    
+
 }

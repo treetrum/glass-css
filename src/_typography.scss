@@ -1,4 +1,5 @@
-/** Typography */
+// Typography
+// ----------
 
 // Set base REM/EM and font family
 html {
@@ -8,10 +9,13 @@ html {
 }
 
 // Headings
+%heading-styles {
+    margin: 0;
+    line-height: $line-height-headings;
+}
 @each $heading in $headings {
     #{$heading} {
-        margin: 0;
-        line-height: $line-height-headings;
+        @extend %heading-styles;
     }
 }
 
@@ -44,7 +48,7 @@ p, ul, ol {
 
 // Give paragraph style elements following headings half their usual margin top
 // Uses % elements to minimize outputted code
-%paragraphs-after-headings { margin-top: $vertical-rhythm/2; }
+%paragraphs-after-headings { @extend %headings-after-headings; }
 @each $pElement in (p, ul) {
     @each $heading in $headings {
         #{$heading} + #{$pElement} {
