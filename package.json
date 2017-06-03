@@ -4,7 +4,7 @@
     "description": "Glass CSS. A simple, lightweight, mostly clear CSS framework.",
     "main": "src/style.scss",
     "scripts": {
-        "test": "echo 'Error, no test specified'"
+        "build": "node-sass --output-style nested src/glass.scss > dist/glass.css"
     },
     "author": "Sam Davis <sam@sjd.co>",
     "license": "MIT",
@@ -25,5 +25,8 @@
     "bugs": {
         "url": "https://github.com/treetrum/glass-scss/issues"
     },
-    "homepage": "https://github.com/treetrum/glass-scss#readme"
+    "homepage": "https://github.com/treetrum/glass-scss#readme",
+    "devDependencies": {
+        "node-sass": "^4.5.3"
+    }
 }
