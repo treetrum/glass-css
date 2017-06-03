@@ -188,6 +188,31 @@ textarea {
   -webkit-appearance: button;
   font: inherit; }
 
+/** Mixins */
+/**
+ * Simplifies using breakpoints by providing an entry from $breakpoints as the
+ * single argument.
+ *
+ * // TODO: Add suport for using explicit numeric (px, rem, em, etc) values
+ */
+/**
+ * Globals
+ */
+/**
+ * Wrap
+ */
+/**
+ * Content
+ */
+/**
+ * Breakpoints
+ */
+/**
+ * Typography
+ */
+/**
+ * Grid
+ */
 /** Typography */
 html {
   font-size: 16px;
@@ -215,21 +240,26 @@ p, li, span {
   font-size: 0.875rem;
   line-height: 1.5; }
 
-@media screen and (min-width: 40.0625rem) {
-  h1 {
-    font-size: 2.75rem; }
-  h2 {
-    font-size: 2.25rem; }
-  h3 {
-    font-size: 2rem; }
-  h4 {
-    font-size: 1.75rem; }
-  h5 {
-    font-size: 1.5rem; }
-  h6 {
-    font-size: 1.25rem; }
-  p, li, span {
-    font-size: 1rem; } }
+h1 {
+  font-size: 2.75rem; }
+
+h2 {
+  font-size: 2.25rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.75rem; }
+
+h5 {
+  font-size: 1.5rem; }
+
+h6 {
+  font-size: 1.25rem; }
+
+p, li, span {
+  font-size: 1rem; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1rem 0; }
@@ -304,54 +334,98 @@ html {
 .small-12 {
   width: 100%; }
 
-@media screen and (min-width: 40.0625rem) {
+@media screen and (min-width: 640px) {
   .medium-1 {
-    width: 8.33333%; }
+    width: 8.33333%; } }
+
+@media screen and (min-width: 640px) {
   .medium-2 {
-    width: 16.66667%; }
+    width: 16.66667%; } }
+
+@media screen and (min-width: 640px) {
   .medium-3 {
-    width: 25%; }
+    width: 25%; } }
+
+@media screen and (min-width: 640px) {
   .medium-4 {
-    width: 33.33333%; }
+    width: 33.33333%; } }
+
+@media screen and (min-width: 640px) {
   .medium-5 {
-    width: 41.66667%; }
+    width: 41.66667%; } }
+
+@media screen and (min-width: 640px) {
   .medium-6 {
-    width: 50%; }
+    width: 50%; } }
+
+@media screen and (min-width: 640px) {
   .medium-7 {
-    width: 58.33333%; }
+    width: 58.33333%; } }
+
+@media screen and (min-width: 640px) {
   .medium-8 {
-    width: 66.66667%; }
+    width: 66.66667%; } }
+
+@media screen and (min-width: 640px) {
   .medium-9 {
-    width: 75%; }
+    width: 75%; } }
+
+@media screen and (min-width: 640px) {
   .medium-10 {
-    width: 83.33333%; }
+    width: 83.33333%; } }
+
+@media screen and (min-width: 640px) {
   .medium-11 {
-    width: 91.66667%; }
+    width: 91.66667%; } }
+
+@media screen and (min-width: 640px) {
   .medium-12 {
     width: 100%; } }
 
-@media screen and (min-width: 64.0625rem) {
+@media screen and (min-width: 1024px) {
   .large-1 {
-    width: 8.33333%; }
+    width: 8.33333%; } }
+
+@media screen and (min-width: 1024px) {
   .large-2 {
-    width: 16.66667%; }
+    width: 16.66667%; } }
+
+@media screen and (min-width: 1024px) {
   .large-3 {
-    width: 25%; }
+    width: 25%; } }
+
+@media screen and (min-width: 1024px) {
   .large-4 {
-    width: 33.33333%; }
+    width: 33.33333%; } }
+
+@media screen and (min-width: 1024px) {
   .large-5 {
-    width: 41.66667%; }
+    width: 41.66667%; } }
+
+@media screen and (min-width: 1024px) {
   .large-6 {
-    width: 50%; }
+    width: 50%; } }
+
+@media screen and (min-width: 1024px) {
   .large-7 {
-    width: 58.33333%; }
+    width: 58.33333%; } }
+
+@media screen and (min-width: 1024px) {
   .large-8 {
-    width: 66.66667%; }
+    width: 66.66667%; } }
+
+@media screen and (min-width: 1024px) {
   .large-9 {
-    width: 75%; }
+    width: 75%; } }
+
+@media screen and (min-width: 1024px) {
   .large-10 {
-    width: 83.33333%; }
+    width: 83.33333%; } }
+
+@media screen and (min-width: 1024px) {
   .large-11 {
-    width: 91.66667%; }
+    width: 91.66667%; } }
+
+@media screen and (min-width: 1024px) {
   .large-12 {
     width: 100%; } }

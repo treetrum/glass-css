@@ -4,7 +4,9 @@
     "description": "Glass CSS. A simple, lightweight, mostly clear CSS framework.",
     "main": "src/style.scss",
     "scripts": {
-        "build": "node-sass --output-style nested src/glass.scss > dist/glass.css"
+        "build": "npm run build:min && npm run build:max",
+        "build:min": "node-sass --output-style compressed src/glass.scss > dist/glass-min.css",
+        "build:max": "node-sass --output-style nested src/glass.scss > dist/glass.css"
     },
     "author": "Sam Davis <sam@sjd.co>",
     "license": "MIT",
