@@ -1,7 +1,0 @@
-@include test-module('rem-calc') {
-    @include test('should return the approprate rem value based on the current rem base') {
-        $actual: rem-calc(16px);
-        $expected: "1rem"; // Must be a string ಠ_ಠ
-        @include assert-equal($actual, $expected);
-    }
-}
