@@ -4,9 +4,39 @@
     @return $remSize + rem;
 }
 
-// Mixins
-@mixin breakpoint($breakpointMinWidth) {
-    @media screen and (min-width: #{$breakpointMinWidth}) {
-        @content
+/** Mixins */
+
+/**
+ * Simplifies using breakpoints by providing an entry from $breakpoints as the
+ * single argument.
+ *
+ * // TODO: Add suport for using explicit numeric (px, rem, em, etc) values
+ */
+@mixin breakpoint($namedBreakpoint) {
+
+    // Create a variable to store the retrived breakpoint
+    $breakpoint: 0px;
+
+    // If $breakpoitns has the key supplied, use the value attached to it.
+    @if map-has-key($breakpoints, $namedBreakpoint) {
+        $breakpoint: map-get($breakpoints, $namedBreakpoint);
     }
+
+    // If we dont find the key in $breakpoints, create an error.
+    @else {
+        @error "No breakpoint called #{$namedBreakpoint} found in $breakpoints";
+    }
+
+    // If the breakpoint doesn't equal 0px, create a min-width breakpoint
+    @if $breakpoint != 0px {
+        @media screen and (min-width: #{$breakpoint}) {
+            @content;
+        }
+    }
+
+    // If the breakpoint equals 0px, simply print the content to save space.
+    @else {
+        @content;
+    }
+
 }

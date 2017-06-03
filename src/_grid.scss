@@ -38,22 +38,16 @@ html {
     padding-right: $content-gutter/4;
 }
 
-@for $i from 1 through $column-count {
-    .small-#{$i} {
-        width: (100% / $column-count) * $i;
-    }
-}
-@include breakpoint($small) {
+@each $breakpointName, $breakpoint in $breakpoints {
+
     @for $i from 1 through $column-count {
-        .medium-#{$i} {
-            width: (100% / $column-count) * $i;
+
+        @include breakpoint(#{$breakpointName}) {
+            .#{$breakpointName}-#{$i} {
+                width: (100% / $column-count) * $i
+            }
         }
+
     }
-}
-@include breakpoint($medium) {
-    @for $i from 1 through $column-count {
-        .large-#{$i} {
-            width: (100% / $column-count) * $i;
-        }
-    }
+
 }

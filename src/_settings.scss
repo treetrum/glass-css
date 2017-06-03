@@ -1,18 +1,34 @@
-// Globals
+/**
+ * Globals
+ */
 $rem-base: 16px;
 
-// General
+/**
+ * Wrap
+ */
 $wrap-max-width: rem-calc(1200px);
+
+/**
+ * Content
+ */
 $content-gutter: 3rem;
 
-// Breakpoints
-$small: rem-calc(641px);
-$medium: rem-calc(1025px);
-$large: rem-calc(1441px);
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+    small: 0px,
+    medium: 640px,
+    large: 1024px
+);
 
-// Typography
+/**
+ * Typography
+ */
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $line-height: 1.5;
 
-// Grid
+/**
+ * Grid
+ */
 $column-count: 12;
