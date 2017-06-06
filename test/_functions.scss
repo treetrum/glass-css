@@ -1,8 +1,34 @@
 @include describe('Functions') {
-    // rem-calc function
-    @include describe("rem-calc") {
-        @include it("Converts px into rem units") {
-            @include assert-equal( rem-calc(16px, 16px), "1rem" );
+
+    // strip-unit function
+    @include describe("strip-unit") {
+        @include it("Strips px") {
+            @include assert-equal( strip-unit(1px), 1 );
+        }
+        @include it("Strips rem") {
+            @include assert-equal( strip-unit(1rem), 1 );
+        }
+        @include it("Strips em") {
+            @include assert-equal( strip-unit(1em), 1 );
+        }
+        @include it("Strips %") {
+            @include assert-equal( strip-unit(1%), 1 );
+        }
+    }
+
+    // to-rem function
+    @include describe("to-rem") {
+        @include it("px -> rem") {
+            @include assert-equal( to-rem(16px, 16px), 1rem );
+        }
+        @include it("rem -> rem") {
+            @include assert-equal( to-rem(1rem, 16px), 1rem );
+        }
+        @include it("em -> rem") {
+            @include assert-equal( to-rem(1em, 16px), 1rem );
+        }
+        @include it("% -> rem") {
+            @include assert-equal( to-rem(100%, 16px), 1rem );
         }
     }
 }

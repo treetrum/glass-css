@@ -1,8 +1,31 @@
 // Functions
 // ---------
-@function rem-calc($valueInPixels, $_rem-base: $rem-base) {
-    $remSize: $valueInPixels/$_rem-base;
-    @return $remSize + rem;
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function to-rem($value, $_rem-base: $rem-base) {
+
+    // Convert em into rem
+    @if unit($value) == 'em' {
+        $value: strip-unit($value) * 1rem;
+    }
+
+    // Convert 0rem into 0
+    @if $value == 0rem { $value: 0; }
+
+    // Handle percentages
+    @if unit($value) == '%' {
+        $value: strip-unit($value) / strip-unit($value) * 1rem;
+    }
+
+    // Convert to rem if not already
+    @if unit($value) != 'rem' {
+        $value: strip-unit($value) / strip-unit($_rem-base) * 1rem;
+    }
+
+    @return $value;
 }
 
 // Mixins
@@ -15,7 +38,7 @@
 @mixin breakpoint($namedBreakpoint, $_breakpoints: $breakpoints) {
 
     // Create a variable to store the retrived breakpoint
-    $breakpoint: 0px;
+    $breakpoint: 0;
 
     // If $breakpoitns has the key supplied, use the value attached to it.
     @if map-has-key($_breakpoints, $namedBreakpoint) {
@@ -28,7 +51,7 @@
     }
 
     // If the breakpoint doesn't equal 0px, create a min-width breakpoint
-    @if $breakpoint != 0px {
+    @if $breakpoint != 0 {
         @media screen and (min-width: #{$breakpoint}) {
             @content;
         }
