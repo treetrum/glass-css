@@ -6,10 +6,13 @@
     "scripts": {
         "test": "mocha test/test-sass.js",
         "prebuild": "npm run test",
-        "build": "npm run build:min && npm run build:max",
+        "build": "npm run build:max && npm run build:min",
+        "build:max": "node-sass --output-style nested src/glass.scss > dist/glass.css && npm run notify:success || npm run notify:failure",
         "build:min": "node-sass --output-style compressed src/glass.scss > dist/glass-min.css",
-        "build:max": "node-sass --output-style nested src/glass.scss > dist/glass.css",
-        "postbuild": "rimraf docs/dist && cpy dist/* docs/dist/"
+        "postbuild": "rimraf docs/dist &cpy dist/* docs/dist/",
+        "start": "watch 'npm run build:max && npm run build:min' src/",
+        "notify:success": "notify -t 'Glass CSS - ✅' -m 'Project build passed.'",
+        "notify:failure": "notify -t 'Glass CSS - ⚠️' -m 'Project build failed.'"
     },
     "author": "Sam Davis <sam@sjd.co>",
     "license": "MIT",
@@ -34,8 +37,10 @@
     "devDependencies": {
         "cpy-cli": "^1.0.1",
         "mocha": "^3.4.2",
+        "node-notifier-cli": "^1.0.1",
         "node-sass": "^4.5.3",
         "rimraf": "^2.6.1",
-        "sass-true": "^3.0.0-beta.1"
+        "sass-true": "^3.0.0-beta.1",
+        "watch": "^1.0.2"
     }
 }
