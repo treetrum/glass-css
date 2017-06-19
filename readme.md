@@ -1,4 +1,6 @@
+[![npm version](https://badge.fury.io/js/glass-css.svg)](https://badge.fury.io/js/glass-css)
 [![Build Status](https://travis-ci.org/treetrum/glass-css.svg?branch=master)](https://travis-ci.org/treetrum/glass-css)
+[![devDependencies Status](https://david-dm.org/treetrum/glass-css/dev-status.svg)](https://david-dm.org/treetrum/glass-css?type=dev)
 
 # Glass CSS
 
